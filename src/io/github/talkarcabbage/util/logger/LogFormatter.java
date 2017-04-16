@@ -31,17 +31,17 @@ public class LogFormatter extends Formatter {
 			.append("] [")
 			.append(record.getLevel())
 			.append("] ");
-		if (LoggerManager.getGlobalLoggerLevel().intValue() < Level.INFO.intValue()) {
+		if (LoggerManager.getGlobalLoggerLevel().intValue() < Level.INFO.intValue()) { //Medium info if logging more than INFO
 			sb.append("[")
 			.append(record.getLoggerName())
 			.append("] ");
 		}
-		if (LoggerManager.getGlobalLoggerLevel().intValue() == Level.ALL.intValue()) {
+		if (LoggerManager.getGlobalLoggerLevel().intValue() == Level.ALL.intValue()) { //Maximum information
 			sb.append("[");
 			try {
 				sb.append(Class.forName(record.getSourceClassName()).getSimpleName());
 			} 
-			catch (ClassNotFoundException e) {} //NOSONAR
+			catch (ClassNotFoundException e) {} //NOSONAR We don't need to log this, and we know it may occur normally.
 			sb.append(".")
 			.append(record.getSourceMethodName())
 			.append(" thread ")
@@ -54,8 +54,8 @@ public class LogFormatter extends Formatter {
 			record.getThrown().printStackTrace(new PrintWriter(stringWriter)); //Based on Google's Guava library
 			sb.append(stringWriter.toString());
 		}
-			
-			sb.append("\n");
+		
+		sb.append("\n");
 		return sb.toString();
 	}
 	

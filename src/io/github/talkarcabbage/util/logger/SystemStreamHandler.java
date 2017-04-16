@@ -7,11 +7,12 @@ import java.util.logging.LogRecord;
 import java.util.logging.StreamHandler;
 
 /**
- * 
+ * Behaves similarly to a ConsoleHandler, but allows the use of other streams; intended streams are System.out and System.in.
+ * Takes two Levels, and will only log between those levels. Primarily used to separate System.err frmo System.out logging.
  * @author Talkarcabbage
  *
  */
-public class SysoutHandler extends StreamHandler {
+public class SystemStreamHandler extends StreamHandler {
 
 	Level minLevel;
 	Level maxLevel;
@@ -22,7 +23,7 @@ public class SysoutHandler extends StreamHandler {
 	 * @param minLevel The least severe Level
 	 * @param maxLevel The most severe level.
 	 */
-	public SysoutHandler(PrintStream stream, final Level minLevel, final Level maxLevel) {
+	public SystemStreamHandler(PrintStream stream, final Level minLevel, final Level maxLevel) {
 		super(stream, LogFormatter.getInstance());
 		this.minLevel = minLevel;
 		this.maxLevel = maxLevel;
