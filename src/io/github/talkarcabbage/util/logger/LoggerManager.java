@@ -34,7 +34,7 @@ public class LoggerManager {
 
 	static final HashMap<String, Logger> hm = new HashMap<>(64); //Initial size based on small projects
 	static Level globalLogLevel = Level.INFO; //Default value is INFO.
-
+	
 	LoggerManager() {} //Prevent unnecessary instantiation
 	
 	/**
@@ -43,6 +43,9 @@ public class LoggerManager {
 	 * @return A preconfigured Logger for the specified name.
 	 */
 	public static Logger getLogger(String name) {
+		if ("".equals(name)) {
+			System.err.println("[LoggerManager] Received a request for the default logger. It is recommended to never use the default (empty string) logger. You may encounter duplicate logging!"); //NOSONAR Try to avoid logging with the logger to avoid the possibility of infinite error loops
+		}
 		if (hm.get(name) == null) {
 			Logger logger = Logger.getLogger(name);
 			logger.setUseParentHandlers(false);
