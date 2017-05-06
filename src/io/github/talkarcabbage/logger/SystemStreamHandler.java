@@ -24,7 +24,7 @@ import java.util.logging.StreamHandler;
 
 /**
  * Behaves similarly to a ConsoleHandler, but allows the use of other streams; intended streams are System.out and System.in.
- * Takes two Levels, and will only log between those levels. Primarily used to separate System.err frmo System.out logging.
+ * Takes two Levels, and will only log between those levels. Primarily used to separate System.err from System.out logging.
  * @author Talkarcabbage
  *
  */
