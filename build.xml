@@ -63,7 +63,7 @@
 	</target>
 
 	<target name="javadoc">
-		<javadoc access="public" author="true" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" source="1.7" sourcefiles="src/io/github/talkarcabbage/util/logger/package-info.java,src/io/github/talkarcabbage/util/logger/LoggerManager.java,src/io/github/talkarcabbage/util/logger/SystemStreamHandler.java,src/io/github/talkarcabbage/util/logger/LogFormatter.java" sourcepath="src" splitindex="true" use="true" version="true"/>
+		<javadoc access="public" author="true" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" source="1.7" sourcefiles="src/io/github/talkarcabbage/logger/package-info.java,src/io/github/talkarcabbage/logger/LoggerManager.java,src/io/github/talkarcabbage/logger/SystemStreamHandler.java,src/io/github/talkarcabbage/logger/LogFormatter.java" splitindex="true" use="true" version="true"/>
 	</target>
 	
 	<target name="package-docs" depends="javadoc">
