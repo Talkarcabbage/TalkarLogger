@@ -13,7 +13,7 @@
  *   limitations under the License.
  */
 
-package io.github.talkarcabbage.util.logger;
+package io.github.talkarcabbage.logger;
 
 import static org.junit.Assert.*;
 

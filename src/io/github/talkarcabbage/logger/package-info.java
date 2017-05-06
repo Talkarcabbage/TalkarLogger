@@ -5,4 +5,4 @@
  * @author Talkarcabbage
  *
  */
-package io.github.talkarcabbage.util.logger;
+package io.github.talkarcabbage.logger;
