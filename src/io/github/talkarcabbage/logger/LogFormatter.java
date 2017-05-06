@@ -437,7 +437,7 @@ public class LogFormatter extends Formatter {
 	
 	/**
 	 * Returns whether a property should be included in the logger header based on its minimum level, the record level, and global level.
-	 * Note that the minLevel and recordLevel are not necessarily correlated with each other in regards to the result of this method (e.g. minLevel can be less than, graeter than, or equal to recordLevel with no effect)
+	 * Note that the minLevel and recordLevel are not necessarily correlated with each other in regards to the result of this method (e.g. minLevel can be less than, greater than, or equal to recordLevel with no effect)
 	 * @param minLevel Minimum level to include this header in.
 	 * @param recordLevel Logger level of the record being logged. Used to determine if verboseErr is applied if this value is WARNING or SEVERE
 	 * @return If the property should be included.
