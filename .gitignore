@@ -14,3 +14,22 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# New build files
+.gradle
+**/build/
+!src/**/build/
+.gradletasknamecache
+
+# Don't exclude Gradle wrapper for builds
+!gradle-wrapper.jar
+
+
+#IDEA files.
+.idea/
+*.iml
+*.iws
+*.ipr
