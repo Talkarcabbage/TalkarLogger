@@ -15,6 +15,12 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(8)) // Set the Java version you want to target
+    }
+}
+
 tasks.test {
     useJUnitPlatform()
 }
@@ -26,10 +32,6 @@ sourceSets {
     test {
         java.srcDirs("src/test/java")
     }
-}
-
-java {
-    withSourcesJar()
 }
 
 tasks.jar {
