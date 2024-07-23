@@ -1,8 +1,9 @@
 plugins {
     java
+    `maven-publish`
 }
 
-group = "io.github.talkarcabbage.logger"
+group = "io.github.talkarcabbage"
 version = project.property("version") as String
 
 repositories {
@@ -40,5 +41,24 @@ tasks.jar {
             "Implementation-Title" to project.name,
             "Implementation-Version" to project.version
         )
+    }
+}
+
+
+publishing {
+    publications {
+        create<MavenPublication>("TalkarLogger") {
+            from(components["java"])
+        }
+    }
+    repositories {
+        maven {
+            name = "TalkarLogger"
+            url = uri("https://maven.pkg.github.com/talkarcabbage/TalkarLogger")
+            credentials {
+                username = System.getenv("USERNAME")
+                password = System.getenv("TOKEN")
+            }
+        }
     }
 }
