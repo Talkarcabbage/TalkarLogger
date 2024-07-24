@@ -43,22 +43,3 @@ tasks.jar {
         )
     }
 }
-
-
-publishing {
-    publications {
-        create<MavenPublication>("TalkarLogger") {
-            from(components["java"])
-        }
-    }
-    repositories {
-        maven {
-            name = "TalkarLogger"
-            url = uri("https://maven.pkg.github.com/talkarcabbage/TalkarLogger")
-            credentials {
-                username = System.getenv("USERNAME")
-                password = System.getenv("TOKEN")
-            }
-        }
-    }
-}
